@@ -18,8 +18,8 @@ export class LogoutComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log("LogoutComponent ngOnInit");
     removeCookie("XSRF-TOKEN");
-    removeCookie("JSESSIONID");
     window.sessionStorage.clear();
     this.userService.setUserDetails(new User());
     this.router.navigate(['/login']);
